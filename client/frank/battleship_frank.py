@@ -1,4 +1,4 @@
-import sys, random
+import sys
 
 
 PLAYER_NAME = sys.argv[1]
@@ -132,9 +132,6 @@ class Board:
         return collector[:num_shots]
 
 
-
-
-
 def parse_info(board, message):
     if message[1] == 'grid size':
         coords = message[2].split(' ')
@@ -168,7 +165,7 @@ def parse_query(board, message):
             x = loc[0],
             y = loc[1],
             p = loc[2]
-            ) for loc in get_ship_locations()]
+            ) for loc in board.get_ship_locations()]
         locs_string = '|'.join(locations)
         response = '|RESPONSE|ship locations|{locs}|END|\n'.format(
             locs = locs_string
@@ -189,6 +186,7 @@ def parse_query(board, message):
 def game_loop():
     board = Board()
     while True:
+        print board
         line = raw_input()
         assert(line.endswith("|END|"))
         if line == "|INFO|end game|END|":
@@ -205,110 +203,5 @@ def game_loop():
             return
 
 
-
-
-
-
-#-------------------------------------------------------------
-#Unit Tests
-
-
-'''
-board = Board()
-board.set_grid(10,10)
-print board
-for i in board.get_shots(5):
-    board.record_shot(i[0], i[1], 'miss')
-print board
-shots = board.get_shots(4)
-for i in shots[1:]:
-    board.record_shot(i[0], i[1], 'miss')
-board.record_shot(shots[0][0], shots[0][1], 'hit')
-print board
-for i in board.get_shots(5):
-    board.record_shot(i[0], i[1], 'miss')
-print board
-for i in board.get_shots(5):
-    board.record_shot(i[0], i[1], 'miss')
-print board
-for i in board.get_shots(5):
-    board.record_shot(i[0], i[1], 'miss')
-print board
-for i in board.get_shots(5):
-    board.record_shot(i[0], i[1], 'miss')
-print board
-for i in board.get_shots(5):
-    board.record_shot(i[0], i[1], 'miss')
-print board
-for i in board.get_shots(5):
-    board.record_shot(i[0], i[1], 'miss')
-print board
-
-
-board = Board()
-board.set_grid(10,10)
-print board
-shots = board.get_shots(5)
-print shots
-for i in shots:
-    board.record_shot(i[0], i[1], 'miss')
-print board
-shots = board.get_shots(4)
-for i in shots:
-    board.record_shot(i[0], i[1], 'miss')
-print board
-shots = board.get_shots(4)
-for i in shots:
-    board.record_shot(i[0], i[1], 'miss')
-print board
-
-
-board = Board()
-board.set_grid(10,10)
-print board
-print board.get_shots(5)
-board.record_shot(4,4,'miss')
-board.record_shot(5,5,'miss')
-board.record_shot(3,3,'hit')
-board.record_shot(6,6,'hit')
-board.record_shot(7,7,'miss')
-print board
-shots = board.get_shots(4)
-print shots
-for i in shots:
-    board.record_shot(i[0], i[1], 'miss')
-print board
-shots = board.get_shots(4)
-for i in shots:
-    board.record_shot(i[0], i[1], 'miss')
-print board
-
-
-board = Board()
-board.set_grid(10,10)
-print board.get_shots(5)
-print board
-board.record_shot(4,4,'miss')
-board.record_shot(5,5,'miss')
-board.record_shot(3,3,'hit')
-board.record_shot(6,6,'hit')
-board.record_shot(7,7,'miss')
-print board.opp_board
-print board.get_shots(4)
-
-
-board = Board()
-board.set_grid(10,10)
-print board.opp_board
-
-
-board = Board()
-print board.grid_width
-board.set_grid(3,4)
-print board.grid_width
-
-
-board = Board()
-board.place_ships()
-print board.get_ship_locations()
-'''
+if __name__ == '__main__':
+    game_loop()
