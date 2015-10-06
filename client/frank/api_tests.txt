@@ -1,0 +1,21 @@
+# COMMANDS
+|INFO|grid size|10 10|END|
+|INFO|num ships|5|END|
+|INFO|ship sizes|2|3|3|4|5|END|
+|QUERY|ship locations|END|
+|QUERY|shots|5|END|
+
+|INFO|you miss|0 0|END|
+|INFO|you hit|0 0|END|
+
+
+
+
+
+
+
+
+
+|INFO|lost game|END|
+|INFO|won game|END|
+|INFO|end game|END|
