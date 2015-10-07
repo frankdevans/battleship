@@ -109,7 +109,7 @@ class Board:
             for c in surr:
                 if self.opp_board[c] in ('miss','shot'):
                     misses += 1
-            if misses == 4:
+            if (misses == len(surr)) or (self.opp_board[i] == 'hit'):
                 delete_shots.append(i)
                 self.record_shot(i[0], i[1], 'empty')
 
@@ -186,7 +186,7 @@ def parse_query(board, message):
 def game_loop():
     board = Board()
     while True:
-        print board
+        #print board
         line = raw_input()
         assert(line.endswith("|END|"))
         if line == "|INFO|end game|END|":
