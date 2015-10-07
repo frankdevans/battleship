@@ -3,17 +3,46 @@
 |INFO|num ships|5|END|
 |INFO|ship sizes|2|3|3|4|5|END|
 |QUERY|ship locations|END|
-|QUERY|shots|5|END|
+
 
 |INFO|you miss|0 0|END|
 |INFO|you hit|0 0|END|
+|QUERY|shots|5|END|
 
 
-
-
-
-
-
+|QUERY|shots|5|END|
+|INFO|you miss|5 5|END|
+|INFO|you hit|4 4|END|
+|INFO|you miss|3 3|END|
+|INFO|you miss|6 6|END|
+|INFO|you hit|7 7|END|
+|QUERY|shots|5|END|
+|INFO|you hit|8 7|END|
+|INFO|you hit|6 7|END|
+|INFO|you miss|7 8|END|
+|INFO|you miss|7 6|END|
+|INFO|you miss|5 4|END|
+|QUERY|shots|4|END|
+|INFO|you miss|8 6|END|
+|INFO|you miss|3 4|END|
+|INFO|you miss|4 5|END|
+|INFO|you miss|4 3|END|
+|QUERY|shots|4|END|
+|INFO|you miss|4 9|END|
+|INFO|you miss|2 0|END|
+|INFO|you miss|0 0|END|
+|INFO|you miss|4 0|END|
+|QUERY|shots|5|END|
+|INFO|you miss|0 5|END|
+|INFO|you miss|0 3|END|
+|INFO|you miss|0 1|END|
+|INFO|you miss|7 3|END|
+|INFO|you miss|6 9|END|
+|INFO|you miss|3 7|END|
+|INFO|you miss|0 4|END|
+|INFO|you miss|1 1|END|
+|INFO|you miss|2 6|END|
+|INFO|you miss|8 2|END|
 
 
 |INFO|lost game|END|
